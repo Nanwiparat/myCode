@@ -70,7 +70,7 @@ contract ApproveAndCallFallBack {
 /**
 ERC20 Token, with the addition of symbol, name and decimals and assisted token transfers  /**โทเค็น ERC20 พร้อมการเพิ่มสัญลักษณ์ ชื่อ และทศนิยมและการโอนโทเค็น*/
 */
-contract xxxToken is ERC20Interface, SafeMath {
+contract NANToken is ERC20Interface, SafeMath {       /**ใส่ชื่อเหรียญของตัวเอง*/
     string public symbol;                             /**สัญลักษณ์สาธารณะสตริง*/
     string public  name;                              /**สตริงชื่อ*/
     uint8 public decimals;                            /**ทศนิยม*/
@@ -184,4 +184,3 @@ contract xxxToken is ERC20Interface, SafeMath {
         revert();
     }
 }
-
