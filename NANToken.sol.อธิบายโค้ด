@@ -1,17 +1,17 @@
-pragma solidity ^0.4.24;  เป็นเวอร์ชันของโปรแกรม
+pragma solidity ^0.4.24;  /**เป็นเวอร์ชันของโปรแกรม*/
 
 // ----------------------------------------------------------------------------
 // Sample token contract
 //
-// Symbol        : {{PLS}}                                                สัญลักษณ์ของเหรียญ
-// Name          : {{PLS Token}}                                          ชื่อของเหรียญ
-// Total supply  : {{1xxxxxxxxxxxxxx}}                                    จำนวนของเหรียญ
-// Decimals      : {{4}}                                                  จุดทศนิยมของเหรียญ
-// Owner Account : {{0xCA9114a83C79cA473d1370CE35EEdBEC556D4B2D}}         ลิ้งของกระเป๋าตังที่มาจาก Metamask
+// Symbol        : {{NAN}}                                               /**สัญลักษณ์ของเหรียญ*/
+// Name          : {{NAN Token}}                                         /**ชื่อของเหรียญ*/
+// Total supply  : {{1000000}}                                           /**จำนวนของเหรียญ*/
+// Decimals      : {{4}}                                                 /**จุดทศนิยมของเหรียญ*/
+// Owner Account : {{0x1e671A1f51ecA505eCCBE2ec982d2A2a4181b777}}        /**ลิ้งของกระเป๋าตังที่มาจาก Metamask*/
 //
 // Enjoy.
-//wiparat                                                                 ให้พิมพ์ชื่อตัวเองลงไป
-// (c) by Juan Cruz Martinez 2020. MIT Licence.                           โค้ดนี้สร้างโดยใคร  โดย Juan Cruz Martinez 2020 ใบอนุญาต MIT
+//wiparat                                                               
+// (c) by Juan Cruz Martinez 2020. MIT Licence.                           /**โค้ดนี้สร้างโดยใคร  โดย Juan Cruz Martinez 2020 ใบอนุญาต MIT*/
 // ----------------------------------------------------------------------------
 
 
@@ -39,14 +39,14 @@ contract SafeMath {
         require(b > 0);
         c = a / b;
     }
-}                                                                           ตั้งแต่บรรทัดที่ 21-42  เป็นโค้ดสำหรับการสร้างสัญญา
+}                                                                           /**ตั้งแต่บรรทัดที่ 21-42  เป็นโค้ดสำหรับการสร้างสัญญา*/
 
 
 /**
 ERC Token Standard #20 Interface
 https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md
 */
-contract ERC20Interface {                                                    สัญญา ERC20Interface
+contract ERC20Interface {                                                   
     function totalSupply() public constant returns (uint);
     function balanceOf(address tokenOwner) public constant returns (uint balance);
     function allowance(address tokenOwner, address spender) public constant returns (uint remaining);
@@ -68,12 +68,12 @@ contract ApproveAndCallFallBack {
 }
 
 /**
-ERC20 Token, with the addition of symbol, name and decimals and assisted token transfers  โทเค็น ERC20 พร้อมการเพิ่มสัญลักษณ์ ชื่อ และทศนิยมและการโอนโทเค็น
+ERC20 Token, with the addition of symbol, name and decimals and assisted token transfers  /**โทเค็น ERC20 พร้อมการเพิ่มสัญลักษณ์ ชื่อ และทศนิยมและการโอนโทเค็น*/
 */
 contract xxxToken is ERC20Interface, SafeMath {
-    string public symbol;                             สัญลักษณ์สาธารณะสตริง
-    string public  name;                              สตริงชื่อ
-    uint8 public decimals;                            ทศนิยม
+    string public symbol;                             /**สัญลักษณ์สาธารณะสตริง*/
+    string public  name;                              /**สตริงชื่อ*/
+    uint8 public decimals;                            /**ทศนิยม*/
     uint public _totalSupply;
 
     mapping(address => uint) balances;
@@ -84,12 +84,12 @@ contract xxxToken is ERC20Interface, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = "PLS";                                                         สัญลักษณ์ของเหรียญ
-        name = "PLS Token";                                                     ชื่อของเหรียญ
-        decimals = 4;                                                           จุดทศนิยมของเหรียญ
-        _totalSupply = 1xxxxxxxxxxxxxx;                                         จำนวนของเหรียญ
-        balances[0xCA9114a83C79cA473d1370CE35EEdBEC556D4B2D] = _totalSupply;    บรรทัดนี้ให้ใส่ลิ้งของกระเป๋าตังที่อยู่ใน  Metamask  เพื่อดูยอดคงเหลือ
-        emit Transfer(address(0), 0xCA9114a83C79cA473d1370CE35EEdBEC556D4B2D, _totalSupply);   ใส่ลิ้งของกระเป๋าตังที่อยู่ใน  Metamask  เพื่อเอาไว้โอนเหรียญไปยังกระเป๋าตังอื่นได้
+        symbol = "NAN";                                                         /**สัญลักษณ์ของเหรียญ*/
+        name = "NAN Token";                                                     /**ชื่อของเหรียญ*/
+        decimals = 4;                                                           /**จุดทศนิยมของเหรียญ*/
+        _totalSupply = 1000000;                                                 /**จำนวนของเหรียญ*/
+        balances[0x1e671A1f51ecA505eCCBE2ec982d2A2a4181b777] = _totalSupply;    /**บรรทัดนี้ให้ใส่ลิ้งของกระเป๋าตังที่อยู่ใน  Metamask  เพื่อดูยอดคงเหลือ*/
+        emit Transfer(address(0), 0x1e671A1f51ecA505eCCBE2ec982d2A2a4181b777, _totalSupply);   /**ใส่ลิ้งของกระเป๋าตังที่อยู่ใน  Metamask  เพื่อเอาไว้โอนเหรียญไปยังกระเป๋าตังอื่นได้*/
     }
 
 
